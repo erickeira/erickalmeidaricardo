@@ -24,16 +24,16 @@ export default function Home() {
           <h1 className={styles.tituloNome}>ERICK ALMEIDA</h1>
           <h2 className={styles.profissao}>Desenvolvedor Fullstack |</h2>
           <div className={styles.redesSociais}>
-            <Link href={'https://www.facebook.com/blackerick/'} className={styles.iconSocialMidia}>
+            <Link href={'https://www.facebook.com/blackerick/'} target="_blank" className={styles.iconSocialMidia}>
               <FaFacebookF  className={styles.icon}/>
             </Link>
-            <Link href={'https://www.instagram.com/erickeira/'} className={styles.iconSocialMidia}>
+            <Link href={'https://www.instagram.com/erickeira/'} target="_blank" className={styles.iconSocialMidia}>
               <BsInstagram  className={styles.icon}/>
             </Link>
-            <Link href={'https://github.com/erickeira'} className={styles.iconSocialMidia}>
+            <Link href={'https://github.com/erickeira'} target="_blank" className={styles.iconSocialMidia}>
               <BsGithub  className={styles.icon}/>
             </Link>
-            <Link href={'https://api.whatsapp.com/send?phone=5567981956332'} className={styles.iconSocialMidia}>
+            <Link href={'https://api.whatsapp.com/send?phone=5567981956332'}  target="_blank" className={styles.iconSocialMidia}>
               <BsWhatsapp className={styles.icon}/>
             </Link>
           </div>
