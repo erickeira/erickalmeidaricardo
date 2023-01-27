@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 import Header from '@/components/header'
 import {FaFacebookF} from 'react-icons/fa'
 import {BsInstagram, BsGithub, BsWhatsapp} from 'react-icons/bs'
 import Link from 'next/link'
+import Sobre from '@/components/sobre'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,7 @@ export default function Home() {
         <Header/>
         <div className={styles.containerBackground}>
           <h1 className={styles.tituloNome}>ERICK ALMEIDA</h1>
-          <h2 className={styles.profissao}>Desenvolvedor Fullstack |</h2>
+          <h2 className={`${styles.profissao} ${styles.typingAnimation}`}>Desenvolvedor Fullstack</h2>
           <div className={styles.redesSociais}>
             <Link href={'https://www.facebook.com/blackerick/'} target="_blank" className={styles.iconSocialMidia}>
               <FaFacebookF  className={styles.icon}/>
@@ -38,6 +39,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        <Sobre/>
       </main>
     </>
   )
