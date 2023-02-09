@@ -13,11 +13,12 @@ import { apiId, apiUrl } from '../utils'
 export default function Rota({rota, id, list}) { 
     const [pageSelecionada, setPageSelecionada] = useState(rota || '')
     console.log(pageSelecionada)
+    console.log(`index`)
     // return null
     const router = useRouter()
     const paginas = [
       {
-        rota: "home",
+        rota: "/",
         componente: <Home data={list} onClick={(rota, page) => mudarPagina(rota, page)}/>,
         titulo : ''
       },
@@ -73,7 +74,7 @@ export default function Rota({rota, id, list}) {
     return (
       <>
         <Header onChange={(rota) => mudarPagina(rota)} titulo={tituloPage}/>
-        {componentePage || <></>}
+        {componentePage || <Home data={list} onClick={(rota, page) => mudarPagina(rota, page)}/>}
       </>
     )
      

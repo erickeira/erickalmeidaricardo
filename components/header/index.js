@@ -127,7 +127,7 @@ export default function Header(props) {
                         
                         <nav className="d-none d-md-block menu-topo pt-0 pb-3 pt-md-2 pb-md-2 pt-xl-0 pb-xl-0 text-center text-md-right" style={{display: 'flex'}} >
 
-                            <div onClick={() => onChange("home")}>HOME</div>
+                            <div onClick={() => onChange("/")}>HOME</div>
                             { (finalidades.includes('Aluguel') || finalidades.includes('Aluguel/Temporada') ) && <div  onClick={() => onChange("aluguel")}>ALUGUEL</div> }
                             { finalidades.includes('Venda') && <div onClick={() => onChange( "venda") }> VENDA</div> }
                             <div onClick={() => onChange( "banco-de-pedidos")}>BANCO DE PEDIDOS</div>
