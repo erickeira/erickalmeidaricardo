@@ -484,11 +484,12 @@ function handleShow(value) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps({req, res}) {
     let rotas = req.url.split('?')[0].split('/')
     let rota = rotas[1]
     let id = rotas[2]
-  const {query} = context;
+    console.log(id)
+//   const {query} = context;
    
   const corpo = await JSON.stringify( {
     acoes: [                        
