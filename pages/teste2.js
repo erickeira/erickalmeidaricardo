@@ -1,8 +1,6 @@
-import { useRouter } from 'next/router'
 export default function teste({data}){
-    const router = useRouter()
     return(
-        <div onClick={() => router.push('home')}>
+        <div>
             {data}
         </div>
     )
