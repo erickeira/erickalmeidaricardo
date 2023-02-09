@@ -219,7 +219,7 @@ export default function Imovel(props) {
             <meta name="og:image:height" property="og:image:height" content="480" />
             <title>{ Object.keys(dadosimovel).length > 0 ? `${dadosimovel.titulo} | ${dadosimovel.tipo} | ${dadosimovel.finalidade} | Imóvel | ${titleSite} ` : `${titleSite}`}</title>
         </Head> 
-         <div className="main"> 
+         <div className="main" > 
             <ContentHeader title="Imóvel"  />
          
         
