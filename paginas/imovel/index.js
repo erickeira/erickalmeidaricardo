@@ -17,6 +17,7 @@ import { useRouter } from 'next/router';
 export default function Imovel(props) {
 
     const [ dadosimovel, setDadosImovel ] = useState([]);
+    const [ loading, setLoading ] = useState(false);
     const [ showTelefones, setShowTelefones ] = useState(false);
     
     const [ destaque, setDestaque ] = useState('');
@@ -24,7 +25,9 @@ export default function Imovel(props) {
     useEffect(() => {
         getDadosImovel()
     },[])
+
     async function getDadosImovel(){
+        setLoading(true)
         const corpo = await JSON.stringify( {
             acoes: [                        
             { metodo: "dadosimovel", params:  [{ registro: props.id || 407405 }] },
@@ -42,8 +45,9 @@ export default function Imovel(props) {
         )
         
         const list = await resposta.json()
-
+        setDadosImovel([])
         setDadosImovel(list.dadosimovel)
+        setLoading(false)
     }
 
 
@@ -100,7 +104,7 @@ export default function Imovel(props) {
     }
 
 
-    const [ loading, setLoading ] = useState(false);
+
 
     const [ formulario, setFormulario ] = useState({ 
         nomecompleto: '',
@@ -186,7 +190,7 @@ export default function Imovel(props) {
     }  
 
   
-
+    if(loading) return null
   return (
     
     <>
