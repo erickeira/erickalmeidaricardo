@@ -1,8 +1,6 @@
 import '../styles/globals.css'
 import AuthProvider from '../context';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 export const runtime = 'experimental-edge';
 

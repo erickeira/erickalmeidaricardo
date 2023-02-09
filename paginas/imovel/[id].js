@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import ContentHeader from '../../components/ContentHeader';
-import Header from '../../components/Header'
+// import Header from '../../components/Header'
 import { Modal } from 'react-bootstrap';
 import NumberFormat from 'react-number-format';
 import ImageGallery from 'react-image-gallery';
