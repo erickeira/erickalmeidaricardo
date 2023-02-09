@@ -73,8 +73,8 @@ export default function Rota({rota, list}) {
 export async function getServerSideProps({req, res}){
   let rotas = req.url.split('?')[0].split('/')
   let rota = rotas[1]
-  // let id = rotas[2]
- 
+  let id = rotas[2]
+  console.log(id)
   const corpo = await JSON.stringify( {
     acoes: [                        
       { metodo: "destaques", params: [ { resultados: "4" }] },
