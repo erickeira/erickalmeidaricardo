@@ -11,7 +11,6 @@ import { useRouter } from 'next/router'
 import { apiId, apiUrl } from '../../utils'
 
 export default function Rota({rota, id, list}) {
-  return null
     const [pageSelecionada, setPageSelecionada] = useState(rota || '')
     console.log(pageSelecionada)
     // return null
