@@ -485,12 +485,14 @@ function handleShow(value) {
 }
 
 export async function getServerSideProps(context) {
-
+    let rotas = req.url.split('?')[0].split('/')
+    let rota = rotas[1]
+    let id = rotas[2]
   const {query} = context;
    
   const corpo = await JSON.stringify( {
     acoes: [                        
-      { metodo: "dadosimovel", params:  [{ registro: query.id || 407405 }] },
+      { metodo: "dadosimovel", params:  [{ registro: query.id || id }] },
     ], id: apiId
   });
   const resposta = await fetch(

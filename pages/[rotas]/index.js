@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../../components/Header'
+// import Header from '../../components/Header'
 import Aluguel from '../../paginas/aluguel'
 import Venda from '../../paginas/venda'
 import Busca from '../../paginas/busca'
@@ -62,7 +62,7 @@ export default function Rota({rota, list}) {
     const componentePage = paginas.find(item => item.rota == pageSelecionada)?.componente
     return (
       <>
-        <Header onChange={e => mudarPagina(e)} titulo={tituloPage}/>
+        {/* <Header onChange={e => mudarPagina(e)} titulo={tituloPage}/> */}
         {componentePage || <Home/>}
       </>
     )
