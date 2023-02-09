@@ -10,7 +10,8 @@ import Imovel from '../../paginas/imovel'
 import { useRouter } from 'next/router'
 import { apiId, apiUrl } from '../../utils'
 
-export default function Rota({rota, id, list}) { 
+export default function Rota({rota, id, list}) {
+  return null
     const [pageSelecionada, setPageSelecionada] = useState(rota || '')
     console.log(pageSelecionada)
     // return null
@@ -58,7 +59,6 @@ export default function Rota({rota, id, list}) {
     },[rota])
 
     function mudarPagina(rota){
-      console.log(rota)
       setPageSelecionada(rota.split('/')[0])
       router.push({
           pathname: `/${rota}`,
@@ -73,7 +73,7 @@ export default function Rota({rota, id, list}) {
 
     return (
       <>
-        <Header onChange={(rota, page) => mudarPagina(rota)} titulo={tituloPage}/>
+        <Header onChange={(rota) => mudarPagina(rota)} titulo={tituloPage}/>
         {componentePage || <></>}
       </>
     )
