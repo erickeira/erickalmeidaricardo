@@ -492,7 +492,7 @@ export async function getServerSideProps(context) {
    
   const corpo = await JSON.stringify( {
     acoes: [                        
-      { metodo: "dadosimovel", params:  [{ registro: query.id || id }] },
+      { metodo: "dadosimovel", params:  [{ registro: id }] },
     ], id: apiId
   });
   const resposta = await fetch(
