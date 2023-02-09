@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../../paginas/header'
+import Header from '../../components/Header'
 import Aluguel from '../../paginas/aluguel'
 import Venda from '../../paginas/venda'
 import Busca from '../../paginas/busca'
 import Pedidos from '../../paginas/banco-de-pedidos'
 import Contato from '../../paginas/fale-conosco'
 import Home from '../../paginas/home'
+import Imovel from '../../paginas/imovel'
 import { useRouter } from 'next/router'
 import { apiId, apiUrl } from '../../utils'
 
-export default function Rota({rota, list}) { 
-    const [pageSelecionada, setPageSelecionada] = useState(rota || '')
+export default function Rota({rota, id, list}) { 
+
+    const rotaInicial = rota == 'page' ? id : rota
+
+    const [pageSelecionada, setPageSelecionada] = useState(rotaInicial || '')
+    console.log(pageSelecionada)
+    // return null
     const router = useRouter()
     const paginas = [
       {
         rota: "home",
-        componente: <Home data={list}/>,
+        componente: <Home data={list} onClick={(rota, page) => mudarPagina(rota, page)}/>,
         titulo : ''
       },
       {
@@ -43,44 +49,52 @@ export default function Rota({rota, list}) {
         componente: <Contato rota={rota}/>,
         titulo : 'Fale Conosco'
       },
+      {
+        rota: "imovel",
+        componente: <Imovel id={id}/>,
+        titulo : ``
+      },
     ]
 
     useEffect(() => {
-      setPageSelecionada(rota)
-    },[rota])
+      setPageSelecionada(rotaInicial)
+    },[rotaInicial])
 
-    function mudarPagina(e){
-      setPageSelecionada(e)
+    function mudarPagina(rota, page){
+      setPageSelecionada(rota != 'page' ? rota : page)
       router.push({
-          pathname: `/${e}`,
+          pathname: `/${rota}/${page}`,
           query: {  }
         }, 
         undefined, { shallow: true }
       )
     }
+
     const tituloPage = paginas.find(item => item.rota == pageSelecionada)?.titulo
     const componentePage = paginas.find(item => item.rota == pageSelecionada)?.componente
+
     return (
       <>
-        <Header onChange={e => mudarPagina(e)} titulo={tituloPage}/>
-        {componentePage || <Home/>}
+        <Header onChange={(rota, page) => mudarPagina(rota, page)} titulo={tituloPage}/>
+        {componentePage || <></>}
       </>
     )
      
   }
 
 
-export async function getServerSideProps({req, res}){
+export async function getServerSideProps({req, res, query}){
   let rotas = req.url.split('?')[0].split('/')
   let rota = rotas[1]
   let id = rotas[2]
-  console.log(id)
-  const corpo = await JSON.stringify( {
+
+  const corpo = JSON.stringify({
     acoes: [                        
       { metodo: "destaques", params: [ { resultados: "4" }] },
       { metodo: "ultimasnoticias", params: [ { resultados: "4" }] },
-    ], id: apiId
+    ] , id: apiId
   });
+
   const resposta = await fetch(
         
     apiUrl,
@@ -91,11 +105,12 @@ export async function getServerSideProps({req, res}){
     }
    
   )
- 
+
   const list = await resposta.json()
   let data = {}
   data['rota'] = rota
   data['list'] = list 
+  if(id) data['id'] = id
 
   return {
     props: data, 

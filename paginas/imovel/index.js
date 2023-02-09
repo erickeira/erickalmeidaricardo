@@ -16,8 +16,7 @@ import { useRouter } from 'next/router';
 
 export default function Imovel(props) {
 
-
-  const {dadosimovel} = props;
+  const [ dadosimovel, setDadosImovel ] = useState([]);
 //   const router = useRouter();
   
   
@@ -27,7 +26,30 @@ export default function Imovel(props) {
  
   const [ destaque, setDestaque ] = useState('');
  
+  useEffect(() => {
+    getDadosImovel()
+  },[])
+    async function getDadosImovel(){
+        const corpo = await JSON.stringify( {
+            acoes: [                        
+            { metodo: "dadosimovel", params:  [{ registro: props.id || 407405 }] },
+            ], id: apiId
+        });
+        const resposta = await fetch(
+                
+            apiUrl,
+            {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: corpo
+            }
+        
+        )
+        
+        const list = await resposta.json()
 
+        setDadosImovel(list.dadosimovel)
+    }
 
 
 //   useEffect(() => {
@@ -482,31 +504,4 @@ function handleShow(value) {
 
     </>
   )
-}
-
-export async function getServerSideProps(context) {
-
-  const {query} = context;
-   
-  const corpo = await JSON.stringify( {
-    acoes: [                        
-      { metodo: "dadosimovel", params:  [{ registro: query.id || 407405 }] },
-    ], id: apiId
-  });
-  const resposta = await fetch(
-        
-    apiUrl,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: corpo
-    }
-   
-  )
- 
-  const list = await resposta.json()
-    
-  return {
-    props: list, 
-  }
 }
