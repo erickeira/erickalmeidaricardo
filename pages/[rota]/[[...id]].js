@@ -11,10 +11,7 @@ import { useRouter } from 'next/router'
 import { apiId, apiUrl } from '../../utils'
 
 export default function Rota({rota, id, list}) { 
-
-    const rotaInicial = rota == 'page' ? id : rota
-
-    const [pageSelecionada, setPageSelecionada] = useState(rotaInicial || '')
+    const [pageSelecionada, setPageSelecionada] = useState(rota || '')
     console.log(pageSelecionada)
     // return null
     const router = useRouter()
@@ -57,13 +54,14 @@ export default function Rota({rota, id, list}) {
     ]
 
     useEffect(() => {
-      setPageSelecionada(rotaInicial)
-    },[rotaInicial])
+      setPageSelecionada(rota)
+    },[rota])
 
-    function mudarPagina(rota, page){
-      setPageSelecionada(rota != 'page' ? rota : page)
+    function mudarPagina(rota){
+      console.log(rota)
+      setPageSelecionada(rota.split('/')[0])
       router.push({
-          pathname: `/${rota}/${page}`,
+          pathname: `/${rota}`,
           query: {  }
         }, 
         undefined, { shallow: true }
@@ -75,7 +73,7 @@ export default function Rota({rota, id, list}) {
 
     return (
       <>
-        <Header onChange={(rota, page) => mudarPagina(rota, page)} titulo={tituloPage}/>
+        <Header onChange={(rota, page) => mudarPagina(rota)} titulo={tituloPage}/>
         {componentePage || <></>}
       </>
     )

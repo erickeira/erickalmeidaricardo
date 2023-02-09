@@ -16,19 +16,14 @@ import { useRouter } from 'next/router';
 
 export default function Imovel(props) {
 
-  const [ dadosimovel, setDadosImovel ] = useState([]);
-//   const router = useRouter();
-  
-  
-//   const [ showActions, setShowActions ] = useState(false);
-//   const [ showProposta, setShowProposta ] = useState(false);
-  const [ showTelefones, setShowTelefones ] = useState(false);
- 
-  const [ destaque, setDestaque ] = useState('');
- 
-  useEffect(() => {
-    getDadosImovel()
-  },[])
+    const [ dadosimovel, setDadosImovel ] = useState([]);
+    const [ showTelefones, setShowTelefones ] = useState(false);
+    
+    const [ destaque, setDestaque ] = useState('');
+    
+    useEffect(() => {
+        getDadosImovel()
+    },[])
     async function getDadosImovel(){
         const corpo = await JSON.stringify( {
             acoes: [                        
@@ -88,36 +83,36 @@ export default function Imovel(props) {
         }
        // imovel.imagens && setDestaque(imovel.imagens[0].imagem);
     },[dadosimovel])
-  let images;
-  if ( dadosimovel.imagens && dadosimovel.imagens.length) {
-      images = dadosimovel.imagens.map(item => {
-          return(
-              {
-                  original: `${urlImgs}/${item.imagem}`,
-                  thumbnail: `${urlImgs}/${item.thumb}`,
-                  originalTitle : `${item.titulo}`,                            
-              }
-          )
-      });    
-  }
-  function handleClickMap() {
-    window.open(`https://www.google.com/maps?q=${dadosimovel.latitude},${dadosimovel.longitude}`,'_blank');
-}
+    let images;
+    if ( dadosimovel.imagens && dadosimovel.imagens.length) {
+        images = dadosimovel.imagens.map(item => {
+            return(
+                {
+                    original: `${urlImgs}/${item.imagem}`,
+                    thumbnail: `${urlImgs}/${item.thumb}`,
+                    originalTitle : `${item.titulo}`,                            
+                }
+            )
+        });    
+    }
+    function handleClickMap() {
+        window.open(`https://www.google.com/maps?q=${dadosimovel.latitude},${dadosimovel.longitude}`,'_blank');
+    }
 
 
-const [ loading, setLoading ] = useState(false);
+    const [ loading, setLoading ] = useState(false);
 
-const [ formulario, setFormulario ] = useState({ 
-    nomecompleto: '',
-    email: '',
-    cidade: '',
-    uf: '',
-    telefone: '', 
-    mensagem: '',
-    imovel: dadosimovel.id,
-    finalidade: dadosimovel.finalidade,
-    lnk_anuncio: `${urlSite}/imovel/${dadosimovel.id}`
-});
+    const [ formulario, setFormulario ] = useState({ 
+        nomecompleto: '',
+        email: '',
+        cidade: '',
+        uf: '',
+        telefone: '', 
+        mensagem: '',
+        imovel: dadosimovel.id,
+        finalidade: dadosimovel.finalidade,
+        lnk_anuncio: `${urlSite}/imovel/${dadosimovel.id}`
+    });
 
 // const [ validate, setValidate ] = useState({ validateName: true,validateEmail: true,validateTel: true,validateCity: true,validateUf: true,validateMensage: true });
 
@@ -177,20 +172,19 @@ const [ formulario, setFormulario ] = useState({
 
 // }
 
-function handleForm(valores) {
-  setFormulario({ ...formulario, ...valores });
-}
+    function handleForm(valores) {
+    setFormulario({ ...formulario, ...valores });
+    }
 
-function handleClose(value) {
-  value === 'telefones' && setShowTelefones(false); 
-//   value === 'proposta' && setShowProposta(false);
-}
-function handleShow(value) {
-  value === 'telefones' && setShowTelefones(true); 
-//   value === 'proposta' && setShowProposta(true);
-}  
-  // const router = useRouter();
-  // const {id} = router.query; 
+    function handleClose(value) {
+    value === 'telefones' && setShowTelefones(false); 
+    //   value === 'proposta' && setShowProposta(false);
+    }
+    function handleShow(value) {
+    value === 'telefones' && setShowTelefones(true); 
+    //   value === 'proposta' && setShowProposta(true);
+    }  
+
   
 
   return (

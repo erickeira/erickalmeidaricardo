@@ -116,7 +116,7 @@ export default function Header(props) {
             <div className="container d-flex flex-column flex-md-row align-items-center pt-1  pt-md-0 pb-md-0">
             
                 <div className="logo pt-4 pb-3 pt-lg-0 pb-lg-0">
-                    <Link href="/"><Image loader={loaderImage} src={'../../img/logo.png'} width="100" height="100"alt="Imobiliaria Test" /></Link>
+                    <div onClick={() => onChange("home")}><Image loader={loaderImage} src={'../../img/logo.png'} width="100" height="100"alt="Imobiliaria Test" /></div>
                 </div>
 
                 <button onClick={() => handleOpenMenu()} className={`${isOpen ? 'open ': ''}d-block d-md-none btn-menu primary border-0 font-16 m-3`}>MENU<div><span></span></div></button>
@@ -127,11 +127,11 @@ export default function Header(props) {
                         
                         <nav className="d-none d-md-block menu-topo pt-0 pb-3 pt-md-2 pb-md-2 pt-xl-0 pb-xl-0 text-center text-md-right" style={{display: 'flex'}} >
 
-                            <div onClick={() => onChange("page","home")}>HOME</div>
-                            { (finalidades.includes('Aluguel') || finalidades.includes('Aluguel/Temporada') ) && <div  onClick={() => onChange("page","aluguel")}>ALUGUEL</div> }
-                            { finalidades.includes('Venda') && <div onClick={() => onChange("page", "venda") }> VENDA</div> }
-                            <div onClick={() => onChange("page", "banco-de-pedidos")}>BANCO DE PEDIDOS</div>
-                            <div onClick={() => onChange("page","fale-conosco")}>FALE CONOSCO</div>
+                            <div onClick={() => onChange("home")}>HOME</div>
+                            { (finalidades.includes('Aluguel') || finalidades.includes('Aluguel/Temporada') ) && <div  onClick={() => onChange("aluguel")}>ALUGUEL</div> }
+                            { finalidades.includes('Venda') && <div onClick={() => onChange( "venda") }> VENDA</div> }
+                            <div onClick={() => onChange( "banco-de-pedidos")}>BANCO DE PEDIDOS</div>
+                            <div onClick={() => onChange("fale-conosco")}>FALE CONOSCO</div>
                         </nav>
 
                         <div className="header-dados d-flex flex-column flex-md-row justify-content-end pt-0 pt-xl-3 font-12 font-xl-14 ">
