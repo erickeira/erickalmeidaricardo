@@ -1,0 +1,127 @@
+{
+  "sortedMiddleware": [],
+  "middleware": {},
+  "functions": {
+    "/teste2": {
+      "env": [
+        "NEXT_PRIVATE_MINIMAL_MODE"
+      ],
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/pages/teste2.js"
+      ],
+      "name": "pages/teste2",
+      "page": "/teste2",
+      "matchers": [
+        {
+          "regexp": "^/teste2$"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    },
+    "/teste1": {
+      "env": [
+        "NEXT_PRIVATE_MINIMAL_MODE"
+      ],
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/pages/teste1.js"
+      ],
+      "name": "pages/teste1",
+      "page": "/teste1",
+      "matchers": [
+        {
+          "regexp": "^/teste1$"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    },
+    "/": {
+      "env": [
+        "NEXT_PRIVATE_MINIMAL_MODE"
+      ],
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/pages/index.js"
+      ],
+      "name": "pages/index",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^/$"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    },
+    "/teste3": {
+      "env": [
+        "NEXT_PRIVATE_MINIMAL_MODE"
+      ],
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/pages/teste3.js"
+      ],
+      "name": "pages/teste3",
+      "page": "/teste3",
+      "matchers": [
+        {
+          "regexp": "^/teste3$"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    },
+    "/teste5": {
+      "env": [
+        "NEXT_PRIVATE_MINIMAL_MODE"
+      ],
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/pages/teste5.js"
+      ],
+      "name": "pages/teste5",
+      "page": "/teste5",
+      "matchers": [
+        {
+          "regexp": "^/teste5$"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    },
+    "/teste4": {
+      "env": [
+        "NEXT_PRIVATE_MINIMAL_MODE"
+      ],
+      "files": [
+        "server/middleware-build-manifest.js",
+        "server/middleware-react-loadable-manifest.js",
+        "server/edge-runtime-webpack.js",
+        "server/pages/teste4.js"
+      ],
+      "name": "pages/teste4",
+      "page": "/teste4",
+      "matchers": [
+        {
+          "regexp": "^/teste4$"
+        }
+      ],
+      "wasm": [],
+      "assets": []
+    }
+  },
+  "version": 2
+}

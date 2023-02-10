@@ -59,27 +59,27 @@
       "handle": "rewrite"
     },
     {
-      "src": "^/_next/data/MCQdghduZMKqUrYyFaw1v/index.json$",
+      "src": "^/_next/data/4VMp43GnG9OY0LKtRPQCo/index.json$",
       "dest": "/"
     },
     {
-      "src": "^/_next/data/MCQdghduZMKqUrYyFaw1v/teste1.json$",
+      "src": "^/_next/data/4VMp43GnG9OY0LKtRPQCo/teste1.json$",
       "dest": "/teste1"
     },
     {
-      "src": "^/_next/data/MCQdghduZMKqUrYyFaw1v/teste2.json$",
+      "src": "^/_next/data/4VMp43GnG9OY0LKtRPQCo/teste2.json$",
       "dest": "/teste2"
     },
     {
-      "src": "^/_next/data/MCQdghduZMKqUrYyFaw1v/teste3.json$",
+      "src": "^/_next/data/4VMp43GnG9OY0LKtRPQCo/teste3.json$",
       "dest": "/teste3"
     },
     {
-      "src": "^/_next/data/MCQdghduZMKqUrYyFaw1v/teste4.json$",
+      "src": "^/_next/data/4VMp43GnG9OY0LKtRPQCo/teste4.json$",
       "dest": "/teste4"
     },
     {
-      "src": "^/_next/data/MCQdghduZMKqUrYyFaw1v/teste5.json$",
+      "src": "^/_next/data/4VMp43GnG9OY0LKtRPQCo/teste5.json$",
       "dest": "/teste5"
     },
     {
@@ -91,7 +91,7 @@
       "handle": "hit"
     },
     {
-      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|MCQdghduZMKqUrYyFaw1v)/.+",
+      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|4VMp43GnG9OY0LKtRPQCo)/.+",
       "headers": {
         "cache-control": "public,max-age=31536000,immutable"
       },

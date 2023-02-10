@@ -1,10 +1,9 @@
 {
-  "runtime": "edge",
-  "name": "index",
-  "deploymentTarget": "v8-worker",
-  "entrypoint": "index.js",
-  "envVarsInUse": [
-    "NEXT_PRIVATE_MINIMAL_MODE"
-  ],
-  "assets": []
+  "handler": "___next_launcher.cjs",
+  "runtime": "nodejs18.x",
+  "environment": {},
+  "supportsMultiPayloads": false,
+  "launcherType": "Nodejs",
+  "shouldAddHelpers": false,
+  "shouldAddSourcemapSupport": false
 }
