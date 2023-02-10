@@ -7,8 +7,7 @@ export default function Home({list}){
             router.push({
                 pathname: `/`,
                 query: {  }
-              }, 
-              undefined, { shallow: true }
+              }
             )
         }>
             {list.destaques[0].id}
