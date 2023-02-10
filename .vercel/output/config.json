@@ -59,6 +59,30 @@
       "handle": "rewrite"
     },
     {
+      "src": "^/_next/data/kMU8J3SxXQnW2EUyhmarL/index.json$",
+      "dest": "/"
+    },
+    {
+      "src": "^/_next/data/kMU8J3SxXQnW2EUyhmarL/teste1.json$",
+      "dest": "/teste1"
+    },
+    {
+      "src": "^/_next/data/kMU8J3SxXQnW2EUyhmarL/teste2.json$",
+      "dest": "/teste2"
+    },
+    {
+      "src": "^/_next/data/kMU8J3SxXQnW2EUyhmarL/teste3.json$",
+      "dest": "/teste3"
+    },
+    {
+      "src": "^/_next/data/kMU8J3SxXQnW2EUyhmarL/teste4.json$",
+      "dest": "/teste4"
+    },
+    {
+      "src": "^/_next/data/kMU8J3SxXQnW2EUyhmarL/teste5.json$",
+      "dest": "/teste5"
+    },
+    {
       "src": "/_next/data/(.*)",
       "dest": "/404",
       "status": 404
@@ -67,7 +91,7 @@
       "handle": "hit"
     },
     {
-      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|ORmCssu23ARUAm\\-4Sx4Du)/.+",
+      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|kMU8J3SxXQnW2EUyhmarL)/.+",
       "headers": {
         "cache-control": "public,max-age=31536000,immutable"
       },
