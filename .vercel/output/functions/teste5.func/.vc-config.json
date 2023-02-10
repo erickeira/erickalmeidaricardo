@@ -1,6 +1,6 @@
 {
   "runtime": "edge",
-  "name": "index",
+  "name": "teste5",
   "deploymentTarget": "v8-worker",
   "entrypoint": "index.js",
   "envVarsInUse": [
