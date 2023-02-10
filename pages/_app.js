@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import AuthProvider from '../context';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from '../components/Topo';
+import Topo from '../components/Topo';
 import Footer from '../components/Footer';
 
 
