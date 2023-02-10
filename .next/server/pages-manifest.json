@@ -1,12 +1,10 @@
 {
+  "/teste3": "pages/teste3.js",
   "/teste2": "pages/teste2.js",
+  "/teste4": "pages/teste4.js",
   "/teste1": "pages/teste1.js",
   "/": "pages/index.js",
-  "/teste3": "pages/teste3.js",
-  "/teste5": "pages/teste5.js",
-  "/teste4": "pages/teste4.js",
-  "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js"
 }
