@@ -21,10 +21,10 @@ export default function Imovel(props) {
     const [ showTelefones, setShowTelefones ] = useState(false);
     
     const [ destaque, setDestaque ] = useState('');
-    
+
     useEffect(() => {
         getDadosImovel()
-    },[])
+    },[props.id])
 
     async function getDadosImovel(){
         setLoading(true)
@@ -87,6 +87,7 @@ export default function Imovel(props) {
         }
        // imovel.imagens && setDestaque(imovel.imagens[0].imagem);
     },[dadosimovel])
+
     let images;
     if ( dadosimovel.imagens && dadosimovel.imagens.length) {
         images = dadosimovel.imagens.map(item => {

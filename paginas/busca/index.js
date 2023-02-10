@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 
 export default function Busca(props){
     const router = useRouter();
+    const {onChange} = props
     return (
         <>
         <Head>                   
@@ -37,7 +38,7 @@ export default function Busca(props){
                 <title>Resultado da Busca | { titleSite }</title>
             </Head>
              
-            <ListImoveis />
+            <ListImoveis onChange={(rota, page) => onChange(rota, page)}/>
         </>
     )
 }

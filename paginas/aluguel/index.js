@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import ContentHeader from '../../components/ContentHeader';
 export default function aluguel(props) {
     const router = useRouter();
-    
+    const {onChange} = props
     return (
         <>
             <Head>                   
@@ -37,7 +37,7 @@ export default function aluguel(props) {
                 <title>Aluguel | { titleSite }</title>
             </Head>
             <ContentHeader title="Resultado da Busca" noSearch={true} routes={props} />
-            <ListImoveis finalidadePagina={props.rota} />
+            <ListImoveis onChange={(rota, page) => onChange(rota, page)} finalidadePagina={props.rota} />
         </>
     )
 }

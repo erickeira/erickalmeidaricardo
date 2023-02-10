@@ -203,7 +203,7 @@ export default function ListImoveis(props) {
                             {  imoveis.map(imovel => {
                                 return (
                                     <div key={imovel.id} className="col-12 col-md-6 col-xl-3 py-4">
-                                        <Link href={`/imovel/${imovel.id}`} className="d-flex flex-column shadow h-100 item-grid">
+                                        <div onClick={() => onClick("imovel", imovel.id)} className="d-flex flex-column shadow h-100 item-grid">
                                             
                                             <div className="foto position-relative">
                                                 { imovel.imagem ? (
@@ -243,7 +243,7 @@ export default function ListImoveis(props) {
                                                 
                                             </div>
                                             
-                                        </Link>
+                                        </div>
                                     </div>
                                 );
 

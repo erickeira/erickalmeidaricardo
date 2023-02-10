@@ -12,6 +12,7 @@ import { apiId, apiUrl } from '../../utils'
 
 export default function Rota({rota, id, list}) {
     const rotaInicial = rota == 'page' ? id : rota 
+    console.log(id)
     const [pageSelecionada, setPageSelecionada] = useState(rotaInicial || '')
     // return null
     const router = useRouter()
@@ -91,7 +92,7 @@ export async function getServerSideProps({req, res, query}){
       { metodo: "ultimasnoticias", params: [ { resultados: "4" }] },
     ] , id: apiId
   });
-
+  console.log(rotas)
   const resposta = await fetch(
         
     apiUrl,

@@ -1,0 +1,10 @@
+{
+  "runtime": "edge",
+  "name": "index",
+  "deploymentTarget": "v8-worker",
+  "entrypoint": "index.js",
+  "envVarsInUse": [
+    "NEXT_PRIVATE_MINIMAL_MODE"
+  ],
+  "assets": []
+}
