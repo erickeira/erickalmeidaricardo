@@ -3,7 +3,14 @@ import { useRouter } from 'next/router'
 export default function Home({list}){
     const router = useRouter()
     return(
-        <div onClick={() => router.push('/')}>
+        <div onClick={() => 
+            router.push({
+                pathname: `/`,
+                query: {  }
+              }, 
+              undefined, { shallow: true }
+            )
+        }>
             {list.destaques[0].id}
         </div>
     )
