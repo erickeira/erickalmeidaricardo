@@ -59,27 +59,15 @@
       "handle": "rewrite"
     },
     {
-      "src": "^/_next/data/BrLOReZySMX3e5oU6nbkl/index.json$",
-      "dest": "/"
-    },
-    {
-      "src": "^/_next/data/BrLOReZySMX3e5oU6nbkl/(?<rota>[^/]+?)/(?<id>[^/]+?)\\.json$",
-      "dest": "/[rota]/[id]?rota=$rota&id=$id"
-    },
-    {
       "src": "/_next/data/(.*)",
       "dest": "/404",
       "status": 404
     },
     {
-      "src": "^/(?<rota>[^/]+?)/(?<id>[^/]+?)(?:/)?$",
-      "dest": "/[rota]/[id]?rota=$rota&id=$id"
-    },
-    {
       "handle": "hit"
     },
     {
-      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|BrLOReZySMX3e5oU6nbkl)/.+",
+      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|ORmCssu23ARUAm\\-4Sx4Du)/.+",
       "headers": {
         "cache-control": "public,max-age=31536000,immutable"
       },

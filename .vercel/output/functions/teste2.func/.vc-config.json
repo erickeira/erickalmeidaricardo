@@ -1,6 +1,6 @@
 {
   "runtime": "edge",
-  "name": "[rota]/[id]",
+  "name": "teste2",
   "deploymentTarget": "v8-worker",
   "entrypoint": "index.js",
   "envVarsInUse": [
