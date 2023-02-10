@@ -46,6 +46,15 @@ export default function Header(props) {
     const [ loading, setLoading ] = useState(true);
 
 
+    function mudarPagina(e){
+    
+        router.push({
+            pathname: `/${e}`,
+            query: {  }
+          }, 
+          undefined, { shallow: true }
+        )
+      }
 
     async function openModal() {
         setIsOpen(true);
@@ -110,13 +119,39 @@ export default function Header(props) {
 
     return (
         <>
- 
+            <Head>                   
+                <link rel="apple-touch-icon" sizes="57x57" href={ `${urlFavicon}apple-icon-57x57.png`} />
+                <link rel="apple-touch-icon" sizes="60x60" href={ `${urlFavicon}apple-icon-60x60.png` } />
+                <link rel="apple-touch-icon" sizes="72x72" href={ `${urlFavicon}apple-icon-72x72.png` } />
+                <link rel="apple-touch-icon" sizes="76x76" href={ `${urlFavicon}apple-icon-76x76.png` } />
+                <link rel="apple-touch-icon" sizes="114x114" href={ `${urlFavicon}apple-icon-114x114.png` } />
+                <link rel="apple-touch-icon" sizes="120x120" href={ `${urlFavicon}apple-icon-120x120.png` } />
+                <link rel="apple-touch-icon" sizes="144x144" href={ `${urlFavicon}apple-icon-144x144.png` } />
+                <link rel="apple-touch-icon" sizes="152x152" href={ `${urlFavicon}apple-icon-152x152.png` } />
+                <link rel="apple-touch-icon" sizes="180x180" href={ `${urlFavicon}apple-icon-180x180.png` } />
+                <link rel="icon" type="image/png" sizes="192x192"  href={ `${urlFavicon}android-icon-192x192.png` } />
+                <link rel="icon" type="image/png" sizes="32x32" href={ `${urlFavicon}favicon-32x32.png` } />
+                <link rel="icon" type="image/png" sizes="96x96" href={ `${urlFavicon}favicon-96x96.png` } />
+                <link rel="icon" type="image/png" sizes="16x16" href={ `${urlFavicon}favicon-16x16.png` } />
+                <meta name="msapplication-TileColor" content="#ffffff" />
+                <meta name="msapplication-TileImage" content={ `${urlFavicon}ms-icon-144x144.png` } />
+                <meta name="theme-color" content="#ffffff" />
+                <meta name="description" content={descriptionDefault} />
+                <meta name="og:site_name" property="og:site_name" content={titleSite} />
+                <meta name="og:title" property="og:title" content={`Resultado da Busca | ${titleSite}`} />
+                <meta name="og:url" property="og:url" content={`${urlSite}/busca${router.query}`} /> 
+                <meta name="og:description" property="og:description" content={descriptionDefault} />                             
+                <meta name="og:image" property="og:image" content={`${urlFavicon}padrao.png`} />
+                <meta name="og:image:width" property="og:image:width" content="300" />
+                <meta name="og:image:height" property="og:image:height" content="300" />
+                <title>{titulo || ''} | { titleSite }</title>
+            </Head>
         <header className={`${isOpen ? 'open ' : ''}d-flex align-items-center header`}>              
 
             <div className="container d-flex flex-column flex-md-row align-items-center pt-1  pt-md-0 pb-md-0">
             
                 <div className="logo pt-4 pb-3 pt-lg-0 pb-lg-0">
-                    <div onClick={() => onChange("page", "home")}><Image loader={loaderImage} src={'../../img/logo.png'} width="100" height="100"alt="Imobiliaria Test" /></div>
+                    <Link href="/"><Image loader={loaderImage} src={'../../img/logo.png'} width="100" height="100"alt="Imobiliaria Test" /></Link>
                 </div>
 
                 <button onClick={() => handleOpenMenu()} className={`${isOpen ? 'open ': ''}d-block d-md-none btn-menu primary border-0 font-16 m-3`}>MENU<div><span></span></div></button>
@@ -127,11 +162,11 @@ export default function Header(props) {
                         
                         <nav className="d-none d-md-block menu-topo pt-0 pb-3 pt-md-2 pb-md-2 pt-xl-0 pb-xl-0 text-center text-md-right" style={{display: 'flex'}} >
 
-                            <div onClick={() => onChange("page", "home")}>HOME</div>
-                            { (finalidades.includes('Aluguel') || finalidades.includes('Aluguel/Temporada') ) && <div  onClick={() => onChange("page", "aluguel")}>ALUGUEL</div> }
-                            { finalidades.includes('Venda') && <div onClick={() => onChange( "page", "venda") }> VENDA</div> }
-                            <div onClick={() => onChange( "page", "banco-de-pedidos")}>BANCO DE PEDIDOS</div>
-                            <div onClick={() => onChange("page", "fale-conosco")}>FALE CONOSCO</div>
+                            <div onClick={() => mudarPagina("")}>HOME</div>
+                            { (finalidades.includes('Aluguel') || finalidades.includes('Aluguel/Temporada') ) && <div  onClick={() => mudarPagina("aluguel")}>ALUGUEL</div> }
+                            { finalidades.includes('Venda') && <div onClick={() => mudarPagina("venda") }> VENDA</div> }
+                            <div onClick={() => mudarPagina("banco-de-pedidos")}>BANCO DE PEDIDOS</div>
+                            <div onClick={() => mudarPagina("fale-conosco")}>FALE CONOSCO</div>
                         </nav>
 
                         <div className="header-dados d-flex flex-column flex-md-row justify-content-end pt-0 pt-xl-3 font-12 font-xl-14 ">
@@ -175,11 +210,11 @@ export default function Header(props) {
 
                     <button onClick={() => handleOpenMenu()} className={`${isOpen ? 'open ': ''}d-block d-md-none btn-menu border-0 font-16`}>MENU<div><span></span></div></button>
                     <nav className="d-none d-md-flex align-items-center justify-content-end menu-topo flex-grow-1">
-                        <Link href="/" exact>HOME</Link>
-                        { (finalidades.includes('Aluguel') || finalidades.includes('Aluguel/Temporada') ) && <Link href="/aluguel">ALUGUEL</Link> }
-                        { finalidades.includes('Venda') && <Link href="/venda">VENDA</Link> }
-                        <Link href="/banco-de-pedidos">BANCO DE PEDIDOS</Link>
-                        <Link href="/fale-conosco">FALE CONOSCO</Link>
+                        <div onClick={() => onChange("home")}>HOME</div>
+                        { (finalidades.includes('Aluguel') || finalidades.includes('Aluguel/Temporada') ) && <div onClick={() => onChange("aluguel")}>ALUGUEL</div> }
+                        { finalidades.includes('Venda') && <div onClick={() => onChange("venda") }>VENDA</div> }
+                        <div onClick={() => onChange("banco-de-pedidos")}>BANCO DE PEDIDOS</div>
+                        <div onClick={() => onChange("fale-conosco")}>FALE CONOSCO</div>
                     </nav>
 
                 </div>

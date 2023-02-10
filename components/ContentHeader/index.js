@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux'
+
 import { Modal } from 'react-bootstrap';
-import NumberFormat from 'react-number-format';
-import Slider from 'rc-slider';
-import Select from 'react-select';
-import QueryString from 'querystring';
+// import NumberFormat from 'react-number-format';
+// import Slider from 'rc-slider';
+// import Select from 'react-select';
+// import QueryString from 'querystring';
 
 // import Search from '../../img/search.svg';
 
@@ -205,7 +205,7 @@ export default function ContentHeader(props) {
             <div className="d-flex align-items-center justify-content-between container py-4">
                 <h1 className="font-20 font-md-28 text-center text-md-left m-0 text-white">{props.title}</h1> 
                 <button onClick={handleShow} className={`p-1 m-0 bg-transparent border-0${' d-block d-md-none' }`}>
-                    <Image src={'../../img/search.svg'} width="25" height="25" />
+                    {/* <Image src={'../../img/search.svg'} width="25" height="25" /> */}
                 </button>
             </div>                
         </div>

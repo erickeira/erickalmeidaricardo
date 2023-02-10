@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    runtime: 'experimental-edge',
-    appDir: true,
-  },
+  appDir: true,
   reactStrictMode: true,
-  swcMinify: false,
+  swcMinify: true,
   images: {
+    domains : ['https://static-dev.infoimoveis.com.br'],
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: 'https',
