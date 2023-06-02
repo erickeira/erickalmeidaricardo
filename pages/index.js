@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>EricK Almeida Ricardo</title>
+        <title>Erick Almeida Ricardo</title>
         <meta name="description" content="FullStack Developer | ReactJS | ReactNative | Javascript | PHP | SQL" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
