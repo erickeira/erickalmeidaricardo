@@ -1,0 +1,22 @@
+.container{
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    color: #d3d3d3;
+
+    .containerBotao{
+        background-color: transparent;
+        color: #d3d3d3;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 45px;
+    }
+    .containerBotao:hover{
+        color: #2AE98D;
+    }
+}

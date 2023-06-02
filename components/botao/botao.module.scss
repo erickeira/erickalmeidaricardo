@@ -1,0 +1,19 @@
+
+.container{
+    min-width: 200px;
+    padding: 10px 0;
+    background-color: #2AE98D;
+    border-radius: 20px;
+    color: #000;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.container:hover {
+    background-color: #23c074;
+}
+  
+  

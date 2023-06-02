@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body{
+  min-height: 100vh;
+  background-color: #1F1F21;
+}
+
+#__next{
+  min-height: 100vh;
+}
+
+.css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
+  color:  #2AE98D;
+}
+
+.css-117w1su-MuiStepIcon-text {
+  fill: #2AE98D;
+}
+
+.css-1hv8oq8-MuiStepLabel-label.Mui-active{
+  color: #fff;
+}
+.css-ahj2mt-MuiTypography-root{
+  color: #b7b7b7;
+}

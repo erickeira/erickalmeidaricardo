@@ -1,0 +1,28 @@
+{
+  "name": "erickalmeidaricardo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mercadopago/sdk-react": "^0.0.10",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.1",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.2.3",
+    "next": "13.4.4",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-dom": "18.2.0",
+    "react-image-gallery": "^1.2.11",
+    "react-input-mask": "^2.0.4",
+    "react-slideshow-image": "^4.2.1",
+    "sass": "^1.62.1"
+  }
+}

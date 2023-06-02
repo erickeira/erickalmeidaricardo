@@ -1,0 +1,40 @@
+.containerIntroducao{
+
+    .apresentacao {
+      font-size: 78px;
+      letter-spacing: -0.2px;
+      line-height: 90px;
+      margin-bottom: 43px;
+      font-weight: 300;
+      color: #fff;
+    }
+   
+}
+
+.containerSobre{
+  .texto {
+    color: #d1d1d1;
+    display: inline-block;
+    margin-bottom:  14px;
+    font-style: italic;
+  }
+}
+
+.containerExperiencias{
+  margin-top: 50px;
+}
+
+@media (max-width: 900px){
+  .containerIntroducao{
+
+    .apresentacao {
+      font-size: 40px;
+      letter-spacing: -0.2px;
+      line-height: 45px;
+      margin-bottom: 43px;
+      font-weight: 300;
+      color: #fff;
+    }
+   
+}
+}
