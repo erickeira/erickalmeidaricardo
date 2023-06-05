@@ -26,6 +26,7 @@
     "react-particles": "^2.9.3",
     "react-slideshow-image": "^4.2.1",
     "react-tsparticles": "^2.9.3",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "tsparticles": "^2.10.1"
   }
 }

@@ -6,6 +6,8 @@ import { Container, Grid } from '@mui/material'
 import CardPerfil from '@/components/cardPerfil'
 import TituloPage from '@/components/tituloPage'
 import Experiencia from '@/components/experiencia'
+import Skills from '@/components/skills'
+import Projetos from '@/components/projetos'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,6 +46,14 @@ export default function Home() {
         <Container className={`${styles.containerExperiencias}`}>
           <TituloPage titulo={`Educação e Experiencias`}/>
           <Experiencia/>
+        </Container>
+        <Container className={`${styles.containerExperiencias}`}>
+          <TituloPage titulo={`Skills`}/>
+          <Skills/>
+        </Container>
+        <Container className={`${styles.containerExperiencias}`}>
+          <TituloPage titulo={`Projetos`}/>
+          <Projetos/>
         </Container>
       </main>
     </>

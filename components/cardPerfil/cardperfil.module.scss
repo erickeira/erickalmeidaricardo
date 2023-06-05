@@ -1,13 +1,12 @@
 
 .container{
-    min-width: 320px;
     border: 1.5px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
+    // position: fixed;
     margin-bottom: 50px;
     
     h1{
@@ -28,4 +27,20 @@
         object-fit: cover;
         margin-bottom: 50px;      
     }
+}
+
+@media (max-width: 900px) {
+    .container{
+        position: relative;
+        .containerImagem{
+            position: relative;
+            border-radius: 10px;
+            filter: grayscale(1);
+            height: 30vw;
+            object-fit: cover;
+            margin-bottom: 50px;      
+        }
+    }
+    
+    
 }

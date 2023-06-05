@@ -1,0 +1,27 @@
+
+.container{
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    .containerSkill{
+        width: 120px;
+        height: 170px;
+        border: 1px solid #fff;
+        color: #fff;
+        border-radius: 30px;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .containerSkill:hover {
+        border-color: #2AE98D;
+        color: #2AE98D;
+    }
+}
+
+  
+  
